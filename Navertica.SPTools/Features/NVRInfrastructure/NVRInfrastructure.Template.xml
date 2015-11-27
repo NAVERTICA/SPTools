@@ -1,0 +1,17 @@
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" AlwaysForceInstall="TRUE" Id="01726feb-3691-4a6d-96e6-cbb0c84687f1" ReceiverAssembly="Navertica.SPTools, Version=0.8.0.0, Culture=neutral, PublicKeyToken=7a3c1eb1e2411690" ReceiverClass=" Navertica.SharePoint.Features.NVRInfrastructureEventReceiver" Scope="Site" Title="NAVERTICA Infrastructure">
+  <Properties>
+    <Property Key="NVR_SiteScriptsFolder" Value="{0}\LAYOUTS\NVR.SPTools\SiteScripts\" />
+    <Property Key="NVR_SiteConfigFolder" Value="{0}\LAYOUTS\NVR.SPTools\SiteConfig\" />
+  </Properties>
+  <ActivationDependencies>
+    <ActivationDependency FeatureId="9e4af5fe-e089-490d-8aca-e7676ffb81cd" FeatureTitle="NVRFieldJSON" />
+  </ActivationDependencies>
+  <ElementManifests>
+    <ElementManifest Location="NVRPageHead\Elements.xml" />
+    <ElementManifest Location="WorkflowReceiver\Elements.xml" />
+    <ElementManifest Location="GlobalItemReceiver\Elements.xml" />
+    <ElementManifest Location="ListReceiver\Elements.xml" />
+    <ElementManifest Location="EmailReceiver\Elements.xml" />
+    <ElementManifest Location="WebReceiver\Elements.xml" />
+  </ElementManifests>
+</Feature>

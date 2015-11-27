@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Description="$Resources:CustomActionDescription" GroupId="ServiceApplications" Id="f779f7d6-ca03-4543-9e49-f3eede1b7dc9" Sequence="100" Location="Microsoft.SharePoint.Administration.Applications" Title="$Resources:CustomActionTitle" RequiredAdmin="Delegated">
+    <UrlAction Url="/_admin/NVRRepoService/ManageService.aspx" />
+  </CustomAction>  
+</Elements>

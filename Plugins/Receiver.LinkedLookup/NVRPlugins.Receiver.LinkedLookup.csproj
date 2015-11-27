@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC38233D-2251-4D7E-86E6-2F3CF70281A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Navertica.SharePoint</RootNamespace>
+    <AssemblyName>NVRPlugins.Recever.LinkedLookup</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LinkedLookup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Navertica.SharePoint.Extensions\Navertica.SharePoint.Extensions.csproj">
+      <Project>{a03fc531-7646-421f-89cc-b66a4354ae4f}</Project>
+      <Name>Navertica.SharePoint.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Navertica.SPTools\Navertica.SPTools.csproj">
+      <Project>{2fe39295-c795-4701-8305-b06c6f1057fa}</Project>
+      <Name>Navertica.SPTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NVRConfigService\NVRConfigService.csproj">
+      <Project>{30f0fd58-c946-4363-a772-b9f45f0147f2}</Project>
+      <Name>NVRConfigService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NVRLogging\NVRLogging.csproj">
+      <Project>{73812530-f20c-498a-9a42-ad7afb520626}</Project>
+      <Name>NVRLogging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NVRPluginEngine\NVRPluginEngine.csproj">
+      <Project>{1a734ea9-6b0b-4c49-b041-4d39455f877c}</Project>
+      <Name>NVRPluginEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NVRPlugins\NVRPlugins.csproj">
+      <Project>{6e243d2c-faaf-4f63-adbc-910f35b1a8a1}</Project>
+      <Name>NVRPlugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(TargetDir)$(TargetName).dll" "$(SolutionDir)..\NVRPlugins\Layouts\NVRPlugins\SiteScripts\NVR\$(TargetName).dllplugin"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

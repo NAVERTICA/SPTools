@@ -1,0 +1,5 @@
+﻿<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="9e4af5fe-e089-490d-8aca-e7676ffb81cd" Scope="Site" Title="NVRFieldJSON" Hidden="TRUE">
+  <ElementManifests>
+    <ElementManifest Location="FieldJSON\Elements.xml" />
+  </ElementManifests>
+</Feature>

@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Navertica.SPTools", "Navertica.SPTools.csproj", "{2FE39295-C795-4701-8305-B06C6F1057FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRConfigService", "..\NVRConfigService\NVRConfigService.csproj", "{30F0FD58-C946-4363-A772-B9F45F0147F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRRepoService", "..\NVRRepoService\NVRRepoService.csproj", "{51E771DB-BEF4-4529-91A3-8F2B2220EEC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRPluginEngine", "..\NVRPluginEngine\NVRPluginEngine.csproj", "{1A734EA9-6B0B-4C49-B041-4D39455F877C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRLogging", "..\NVRLogging\NVRLogging.csproj", "{73812530-F20C-498A-9A42-AD7AFB520626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRLibraries", "..\NVRLibraries\NVRLibraries.csproj", "{F85F7D1C-4D50-4CA9-B4C5-1C3C1C86C9E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRUtilities", "..\NVRUtilities\NVRUtilities.csproj", "{EF507537-480F-4128-84A4-64357F4E1623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRPlugins", "..\NVRPlugins\NVRPlugins.csproj", "{6E243D2C-FAAF-4F63-ADBC-910F35B1A8A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{3BD47FF8-51B3-4C55-B30A-FD8CDD8375D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRPlugins.Receiver.Duplicate", "..\Plugins\Receiver.Duplicate\NVRPlugins.Receiver.Duplicate.csproj", "{48FFB3B3-9A0B-4B0D-AADA-BF96F988E303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRPlugins.Receiver.LinkedLookup", "..\Plugins\Receiver.LinkedLookup\NVRPlugins.Receiver.LinkedLookup.csproj", "{BC38233D-2251-4D7E-86E6-2F3CF70281A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NVRPlugins.Receiver.SetRights", "..\Plugins\Receiver.SetRights\NVRPlugins.Receiver.SetRights.csproj", "{392A4240-3E8E-4756-96C9-2F38A0A2591F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Navertica.SharePoint.Extensions", "..\Navertica.SharePoint.Extensions\Navertica.SharePoint.Extensions.csproj", "{A03FC531-7646-421F-89CC-B66A4354AE4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FE39295-C795-4701-8305-B06C6F1057FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE39295-C795-4701-8305-B06C6F1057FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE39295-C795-4701-8305-B06C6F1057FA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2FE39295-C795-4701-8305-B06C6F1057FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE39295-C795-4701-8305-B06C6F1057FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FE39295-C795-4701-8305-B06C6F1057FA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{30F0FD58-C946-4363-A772-B9F45F0147F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F0FD58-C946-4363-A772-B9F45F0147F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F0FD58-C946-4363-A772-B9F45F0147F2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{30F0FD58-C946-4363-A772-B9F45F0147F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F0FD58-C946-4363-A772-B9F45F0147F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F0FD58-C946-4363-A772-B9F45F0147F2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{51E771DB-BEF4-4529-91A3-8F2B2220EEC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E771DB-BEF4-4529-91A3-8F2B2220EEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E771DB-BEF4-4529-91A3-8F2B2220EEC6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{51E771DB-BEF4-4529-91A3-8F2B2220EEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E771DB-BEF4-4529-91A3-8F2B2220EEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E771DB-BEF4-4529-91A3-8F2B2220EEC6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1A734EA9-6B0B-4C49-B041-4D39455F877C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A734EA9-6B0B-4C49-B041-4D39455F877C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A734EA9-6B0B-4C49-B041-4D39455F877C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1A734EA9-6B0B-4C49-B041-4D39455F877C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A734EA9-6B0B-4C49-B041-4D39455F877C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A734EA9-6B0B-4C49-B041-4D39455F877C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{73812530-F20C-498A-9A42-AD7AFB520626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73812530-F20C-498A-9A42-AD7AFB520626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73812530-F20C-498A-9A42-AD7AFB520626}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{73812530-F20C-498A-9A42-AD7AFB520626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73812530-F20C-498A-9A42-AD7AFB520626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73812530-F20C-498A-9A42-AD7AFB520626}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F85F7D1C-4D50-4CA9-B4C5-1C3C1C86C9E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85F7D1C-4D50-4CA9-B4C5-1C3C1C86C9E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85F7D1C-4D50-4CA9-B4C5-1C3C1C86C9E3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F85F7D1C-4D50-4CA9-B4C5-1C3C1C86C9E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85F7D1C-4D50-4CA9-B4C5-1C3C1C86C9E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F85F7D1C-4D50-4CA9-B4C5-1C3C1C86C9E3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EF507537-480F-4128-84A4-64357F4E1623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF507537-480F-4128-84A4-64357F4E1623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF507537-480F-4128-84A4-64357F4E1623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF507537-480F-4128-84A4-64357F4E1623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E243D2C-FAAF-4F63-ADBC-910F35B1A8A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E243D2C-FAAF-4F63-ADBC-910F35B1A8A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E243D2C-FAAF-4F63-ADBC-910F35B1A8A1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6E243D2C-FAAF-4F63-ADBC-910F35B1A8A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E243D2C-FAAF-4F63-ADBC-910F35B1A8A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E243D2C-FAAF-4F63-ADBC-910F35B1A8A1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{48FFB3B3-9A0B-4B0D-AADA-BF96F988E303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FFB3B3-9A0B-4B0D-AADA-BF96F988E303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FFB3B3-9A0B-4B0D-AADA-BF96F988E303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FFB3B3-9A0B-4B0D-AADA-BF96F988E303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC38233D-2251-4D7E-86E6-2F3CF70281A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC38233D-2251-4D7E-86E6-2F3CF70281A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC38233D-2251-4D7E-86E6-2F3CF70281A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC38233D-2251-4D7E-86E6-2F3CF70281A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{392A4240-3E8E-4756-96C9-2F38A0A2591F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{392A4240-3E8E-4756-96C9-2F38A0A2591F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{392A4240-3E8E-4756-96C9-2F38A0A2591F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{392A4240-3E8E-4756-96C9-2F38A0A2591F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03FC531-7646-421F-89CC-B66A4354AE4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03FC531-7646-421F-89CC-B66A4354AE4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03FC531-7646-421F-89CC-B66A4354AE4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03FC531-7646-421F-89CC-B66A4354AE4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48FFB3B3-9A0B-4B0D-AADA-BF96F988E303} = {3BD47FF8-51B3-4C55-B30A-FD8CDD8375D3}
+		{BC38233D-2251-4D7E-86E6-2F3CF70281A3} = {3BD47FF8-51B3-4C55-B30A-FD8CDD8375D3}
+		{392A4240-3E8E-4756-96C9-2F38A0A2591F} = {3BD47FF8-51B3-4C55-B30A-FD8CDD8375D3}
+	EndGlobalSection
+EndGlobal

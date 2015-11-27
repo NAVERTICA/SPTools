@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="StatusPage" GroupId="SiteAdministration" Location="Microsoft.SharePoint.SiteSettings" Rights="ManageWeb" Sequence="600" Title="Status Page" xmlns="http://schemas.microsoft.com/sharepoint/">
+    <UrlAction Url="~sitecollection/_layouts/15/NVR.SPTools/Status.aspx" />
+    </CustomAction>
+</Elements>

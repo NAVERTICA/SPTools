@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="b48cdeee-5bf5-4bea-864c-93f8a97cfa28" solutionId="b48cdeee-5bf5-4bea-864c-93f8a97cfa28" resetWebServer="true" deploymentServerType="ApplicationServer" title="Configurations Service Application" description="Installs the Configurations Service Application" sharePointProductVersion="15.0" name="NVRConfigService" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="f0d89042-c984-477e-8238-84bf0a92dc0b" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="0da4e94f-ea4c-4b16-b816-1fb22786e787" />
+    <projectItemReference itemId="452a1059-0539-42a4-b978-8221463a3e42" />
+    <projectItemReference itemId="9b7e064f-5d00-4747-b958-ca02c7ef7dd8" />
+    <projectItemReference itemId="8d3b513f-adaf-48d2-a844-131d1651e903" />
+    <projectItemReference itemId="9187e6c0-827c-4f21-a3a4-328b5418f39a" />
+    <projectItemReference itemId="a8eeaf1d-0ab3-464f-80eb-327291ce2b01" />
+  </projectItems>
+</package>

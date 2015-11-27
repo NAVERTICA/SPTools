@@ -1,0 +1,46 @@
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/spectrum"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/spectrum
+	url = https://github.com/bgrins/spectrum.git
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/ace"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/ace
+	url = git://github.com/ajaxorg/ace-builds
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/CodeMirror"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/CodeMirror
+	url = https://github.com/marijnh/CodeMirror.git
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/dustjs"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/dustjs
+	url = https://github.com/linkedin/dustjs.git
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/jQuery-JSONPath"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/jQuery-JSONPath
+	url = https://github.com/wilhelm-murdoch/jQuery-JSONPath.git
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/jquery-ui"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/jquery-ui
+	url = https://github.com/jquery/jquery-ui
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/JSON-js"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/JSON-js
+	url = https://github.com/douglascrockford/JSON-js
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/legojs"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/legojs
+	url = https://github.com/marianoguerra/legojs
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/requirejs"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/requirejs
+	url = https://github.com/jrburke/requirejs
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/Tag-Handler"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/Tag-Handler
+	url = git://github.com/ioncache/Tag-Handler
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/JSONPath"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/JSONPath
+	url = https://github.com/s3u/JSONPath.git
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/jqueryui"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/jqueryui
+	url = https://github.com/components/jqueryui.git
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/jquery-ui-multiselect-widget"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/jquery-ui-multiselect-widget
+	url = https://github.com/ehynds/jquery-ui-multiselect-widget.git
+[submodule "NVRLibraries/Layouts/NVR.SPTools/libs/json-edit"]
+	path = NVRLibraries/Layouts/NVR.SPTools/libs/json-edit
+	url = https://github.com/NAVERTICA/json-edit
+[submodule "Navertica.SharePoint.Extensions"]
+	path = Navertica.SharePoint.Extensions
+	url = https://github.com/NAVERTICA/Navertica.SharePoint.Extensions
+	branch = master

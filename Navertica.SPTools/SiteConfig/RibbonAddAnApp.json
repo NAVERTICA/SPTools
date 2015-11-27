@@ -1,0 +1,10 @@
+﻿{
+    "JavaScripts": {
+      "LibLinks": [
+        ""
+      ],
+      "ScriptLinks": [
+        "NVR/Ribbon/NVRAddAppEntriesIcon.js"
+      ]
+    }
+}

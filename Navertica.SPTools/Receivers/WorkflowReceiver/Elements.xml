@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers ListTemplateId="10002">
+      <Receiver>
+        <Name>WorkflowReceiverWorkflowStarting</Name>
+        <Type>WorkflowStarting</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>Navertica.SharePoint.Receivers.WorkflowReceiver</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+      <Receiver>
+        <Name>WorkflowReceiverWorkflowStarted</Name>
+        <Type>WorkflowStarted</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>Navertica.SharePoint.Receivers.WorkflowReceiver</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+      <Receiver>
+        <Name>WorkflowReceiverWorkflowPostponed</Name>
+        <Type>WorkflowPostponed</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>Navertica.SharePoint.Receivers.WorkflowReceiver</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+      <Receiver>
+        <Name>WorkflowReceiverWorkflowCompleted</Name>
+        <Type>WorkflowCompleted</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>Navertica.SharePoint.Receivers.WorkflowReceiver</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+
+  </Receivers>
+</Elements>

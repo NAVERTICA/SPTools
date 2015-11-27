@@ -1,0 +1,32 @@
+﻿<ps:Config xmlns:ps="urn:Microsoft.SharePoint.PowerShell"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:schemaLocation="urn:Microsoft.SharePoint.PowerShell SPCmdletSchema.xml">
+  <ps:Assembly Name="$SharePoint.Project.AssemblyFullName$">
+    <ps:Cmdlet>
+      <ps:VerbName>New-ScriptsServiceApplication</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.a1f038e5-1bc2-436d-a346-71ff50c2507a.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Remove-ScriptsService</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.cd11273f-1df1-4d1b-851e-d7cca87bb480.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>New-ScriptsServiceApplicationProxy</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.f7203cb3-c710-4eb7-91c2-58ca25cca6de.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Set-ScriptsServiceApplication</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.1b21a562-dc68-43dc-a001-0c806979049e.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Set-ScriptsServiceApplicationProxy</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.b2f3e390-892d-432e-91e9-3329bf1600ee.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+  </ps:Assembly>
+</ps:Config>
+

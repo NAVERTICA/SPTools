@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51E771DB-BEF4-4529-91A3-8F2B2220EEC6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Navertica.SharePoint.RepoService</RootNamespace>
+    <AssemblyName>NVRRepoService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
+    <CKSDEV_FeaturesSelectedForActivation>e90b5941-2ee7-4034-aaac-3b0a321e5f7d</CKSDEV_FeaturesSelectedForActivation>
+    <ProjectMode>SharePointCustomization</ProjectMode>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TokenReplacementFileExtensions>svc;config</TokenReplacementFileExtensions>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\NVRLibraries\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.SharePoint.Common">
+      <HintPath>..\NVRLibraries\Lib\Microsoft.Practices.SharePoint.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.ApplicationPages.Administration">
+      <HintPath>..\..\..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\CONFIG\ADMINBIN\Microsoft.SharePoint.ApplicationPages.Administration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Powershell, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.SharePoint.PowerShell\14.0.0.0__71e9bce111e9429c\Microsoft.SharePoint.Powershell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Navertica.SPTools\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PGK.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f93e897f802ddcb7, processorArchitecture=MSIL">
+      <HintPath>..\Navertica.SPTools\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="System.Management.Automation" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileAndDate.cs" />
+    <Compile Include="IExecuteScript.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptContext.cs" />
+    <Compile Include="RepoServiceApplication.cs" />
+    <Compile Include="Plumbing\RepoServiceApplicationProxy.cs" />
+    <Compile Include="Plumbing\RepoServiceProxy.cs" />
+    <Compile Include="Plumbing\RepoServiceHostFactory.cs" />
+    <Compile Include="IRepoWCFService.cs" />
+    <Compile Include="RepoWCFService.cs" />
+    <Compile Include="Plumbing\RepoService.cs" />
+    <Compile Include="Plumbing\RepoServiceInstance.cs" />
+    <Compile Include="RepoServiceClient.cs" />
+    <Compile Include="Plumbing\BaseServiceClient.cs" />
+    <Compile Include="ADMIN\NVRRepoService\BaseAdminPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\NVRRepoService\ManageService.aspx.cs">
+      <DependentUpon>ManageService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\NVRRepoService\ManageService.aspx.designer.cs">
+      <DependentUpon>ManageService.aspx.cs</DependentUpon>
+      <AutoGen>true</AutoGen>
+    </Compile>
+    <Compile Include="ADMIN\NVRRepoService\CreateApplication.aspx.cs">
+      <DependentUpon>CreateApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\NVRRepoService\CreateApplication.aspx.designer.cs">
+      <DependentUpon>CreateApplication.aspx.cs</DependentUpon>
+      <AutoGen>true</AutoGen>
+    </Compile>
+    <Compile Include="ADMIN\NVRRepoService\ManageApplication.aspx.cs">
+      <DependentUpon>ManageApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\NVRRepoService\ManageApplication.aspx.designer.cs">
+      <DependentUpon>ManageApplication.aspx.cs</DependentUpon>
+      <AutoGen>true</AutoGen>
+    </Compile>
+    <Compile Include="ADMIN\NVRRepoService\Properties.aspx.cs">
+      <DependentUpon>Properties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\NVRRepoService\Properties.aspx.designer.cs">
+      <DependentUpon>Properties.aspx.cs</DependentUpon>
+      <AutoGen>true</AutoGen>
+    </Compile>
+    <Compile Include="Features\RepoServiceAdmin\RepoServiceAdmin.EventReceiver.cs">
+      <DependentUpon>RepoServiceAdmin.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Powershell\NewScriptsServiceApplication.cs" />
+    <Compile Include="Powershell\NewScriptsServiceApplicationProxy.cs" />
+    <Compile Include="Powershell\SetScriptsServiceApplication.cs" />
+    <Compile Include="Powershell\SetScriptsServiceApplicationProxy.cs" />
+    <Compile Include="Powershell\RemoveScriptsService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+    <None Include="Package\Package.package">
+      <PackageId>{a48d4d4a-39ce-4c8b-8593-6b88da9db745}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Features\RepoServiceAdmin\RepoServiceAdmin.feature">
+      <FeatureId>{e90b5941-2ee7-4034-aaac-3b0a321e5f7d}</FeatureId>
+    </None>
+    <None Include="WebClients\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cc7bb27e-91b9-48d0-81b3-f9c6772875a7}</SharePointProjectItemId>
+    </None>
+    <None Include="WebServices\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4339cadf-6e79-45c7-8743-1dc7e058a7f9}</SharePointProjectItemId>
+    </None>
+    <None Include="ADMIN\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ec5830d5-804d-483b-b463-eec9bbf78cdd}</SharePointProjectItemId>
+    </None>
+    <None Include="AdminResources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{667bcc39-ecc5-4888-a5c5-907301a5f971}</SharePointProjectItemId>
+    </None>
+    <None Include="AdministrationActions\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8cdf5cce-f497-4180-9c00-cd0acc197889}</SharePointProjectItemId>
+    </None>
+    <None Include="Resources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4ba00ecb-3d43-43ed-86f8-e393360f1508}</SharePointProjectItemId>
+    </None>
+    <None Include="Registration\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b006135e-b95e-4c0f-85c0-b48447e6d0ba}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\RepoServiceAdmin\Resources.resx" />
+    <Content Include="Features\RepoServiceAdmin\Resources.en-US.resx" />
+    <Content Include="Features\RepoServiceAdmin\RepoServiceAdmin.Template.xml">
+      <DependentUpon>RepoServiceAdmin.feature</DependentUpon>
+    </Content>
+    <Content Include="WebServices\NVRRepoService\web.config" />
+    <Content Include="WebServices\NVRRepoService\NVRRepoService.svc" />
+    <Content Include="WebClients\NVRRepoService\client.config" />
+    <Content Include="ADMIN\NVRRepoService\ca-icon.png" />
+    <Content Include="ADMIN\NVRRepoService\HLTHERR.png" />
+    <Content Include="ADMIN\NVRRepoService\HLTHFAIL.png" />
+    <Content Include="ADMIN\NVRRepoService\HLTHSUCC.png" />
+    <Content Include="ADMIN\NVRRepoService\ServiceApplication16.png" />
+    <Content Include="ADMIN\NVRRepoService\ServiceInstalled.gif" />
+    <Content Include="ADMIN\NVRRepoService\ServiceNotInstalled.gif" />
+    <Content Include="ADMIN\NVRRepoService\ManageService.aspx" />
+    <Content Include="ADMIN\NVRRepoService\CreateApplication.aspx" />
+    <Content Include="ADMIN\NVRRepoService\ManageApplication.aspx" />
+    <Content Include="ADMIN\NVRRepoService\Properties.aspx" />
+    <Content Include="AdminResources\NVRRepoService.ServiceAdminResources.resx" />
+    <Content Include="AdminResources\NVRRepoService.ServiceAdminResources.en-US.resx" />
+    <Content Include="Resources\NVRRepoService.ServiceResources.resx" />
+    <Content Include="Resources\NVRRepoService.ServiceResources.en-US.resx" />
+    <Content Include="AdministrationActions\Elements.xml" />
+    <Content Include="Registration\NVRRepoService.Powershell.Cmdlets.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Navertica.SharePoint.Extensions\Navertica.SharePoint.Extensions.csproj">
+      <Project>{a03fc531-7646-421f-89cc-b66a4354ae4f}</Project>
+      <Name>Navertica.SharePoint.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRLogging\NVRLogging.csproj">
+      <Project>{73812530-f20c-498a-9a42-ad7afb520626}</Project>
+      <Name>NVRLogging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

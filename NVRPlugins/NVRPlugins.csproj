@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E243D2C-FAAF-4F63-ADBC-910F35B1A8A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Navertica.SharePoint.Plugins</RootNamespace>
+    <AssemblyName>NVRPlugins</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\InstallPlugins\InstallPlugins.EventReceiver.cs">
+      <DependentUpon>InstallPlugins.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\InstallPlugins\InstallPlugins.feature">
+      <FeatureId>{0617de84-9375-4893-a966-a6efa353d2ba}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\NVRPlugins\SiteScripts\NVR\NVRPlugins.Receiver.Duplicate.dllplugin" />
+    <None Include="Layouts\NVRPlugins\SiteScripts\NVR\NVRPlugins.Recever.LinkedLookup.dllplugin" />
+    <None Include="Layouts\NVRPlugins\SiteScripts\NVR\NVRPlugins.TimerJob.Eskalace.dllplugin" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d4472217-9d39-4901-8e64-7d50a20f2346}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\NVRPlugins\SiteConfig\LinkedLookupAddAnApp.json" />
+    <None Include="Layouts\NVRPlugins\SiteConfig\LinkedLookupAddAnApp.metadata.json" />
+    <None Include="Layouts\NVRPlugins\SiteConfig\SetRightsAddAnApp.metadata.json" />
+    <None Include="Layouts\NVRPlugins\SiteConfig\SetRightsAddAnApp.json" />
+    <None Include="Package\Package.package">
+      <PackageId>{057378cb-3aa8-48d1-8944-1fa56f4acf61}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Layouts\NVRPlugins\SiteConfig\DuplicateFieldsAddAnApp.json" />
+    <None Include="Layouts\NVRPlugins\SiteConfig\DuplicateFieldsAddAnApp.metadata.json" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\InstallPlugins\InstallPlugins.Template.xml">
+      <DependentUpon>InstallPlugins.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\NVRPlugins\SiteScripts\NVRFormTemplates\NVRTestTemplate.html" />
+    <Content Include="Layouts\NVRPlugins\SiteScripts\NVR\DuplicateFields\Info.html" />
+    <Content Include="Layouts\NVRPlugins\SiteScripts\NVR\DuplicateFields\NVRAddAppEntriesIcon.js" />
+    <Content Include="Layouts\NVRPlugins\SiteScripts\NVR\LinkedLookup\Info.html" />
+    <Content Include="Layouts\NVRPlugins\SiteScripts\NVR\LinkedLookup\NVRAddAppEntriesIcon.js" />
+    <Content Include="Layouts\NVRPlugins\SiteScripts\NVR\SetRights\Info.html" />
+    <Content Include="Layouts\NVRPlugins\SiteScripts\NVR\SetRights\NVRAddAppEntriesIcon.js" />
+    <Content Include="Layouts\NVRPlugins\SiteScripts\Schema\DuplicateFields.js" />
+    <Content Include="Layouts\NVRPlugins\SiteScripts\Schema\LinkedLookup.js" />
+    <Content Include="Layouts\NVRPlugins\SiteScripts\Schema\SetRights.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NVRLogging\NVRLogging.csproj">
+      <Project>{73812530-f20c-498a-9a42-ad7afb520626}</Project>
+      <Name>NVRLogging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Navertica.SPTools\Navertica.SPTools.csproj">
+      <Project>{a6485114-24ba-41ab-8368-7c178cfc305b}</Project>
+      <Name>Navertica.SPTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

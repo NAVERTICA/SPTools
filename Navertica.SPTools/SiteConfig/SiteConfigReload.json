@@ -1,0 +1,9 @@
+﻿{
+	"ItemUpdated": {
+		"SiteConfigUpdated": "SiteConfigUpdated"
+	},
+	"ItemAdded": {
+		"SiteConfigUpdated": "SiteConfigUpdated"
+	},
+	"SiteConfigUpdated": {}
+}

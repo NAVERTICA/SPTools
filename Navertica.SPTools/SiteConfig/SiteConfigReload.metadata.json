@@ -1,0 +1,11 @@
+﻿{
+  "ContentType": "NVR_SiteConfigJSON",
+  "NVR_SiteConfigApp": "ItemUpdated",
+  "NVR_SiteConfigPackage": "SPTools",
+  "NVR_SiteConfigListType": null,
+  "NVR_SiteConfigUrl": "/Lists/SiteConfig/*",
+  "NVR_SiteConfigOrder": 10,
+  "NVR_SiteConfigActive": true,
+  "NVR_SiteConfigApproved": true,
+  "Title": "SiteConfig reload item in service after update"
+}

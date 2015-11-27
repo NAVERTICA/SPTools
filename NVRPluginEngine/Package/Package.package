@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="1702ebe1-8c76-4167-81aa-4d54c0038245" solutionId="1702ebe1-8c76-4167-81aa-4d54c0038245" resetWebServer="false" sharePointProductVersion="15.0" name="NVRPluginEngine" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="c5750631-3111-435e-98c7-7f6144be0200" />
+    <featureReference itemId="16df4b6e-3b94-47ab-9984-4b2cd8e7d955" />
+  </features>
+</package>

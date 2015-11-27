@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3a6444fa-4b88-40ac-a8a2-1ac1f5da9916" solutionId="3a6444fa-4b88-40ac-a8a2-1ac1f5da9916" resetWebServer="true" sharePointProductVersion="15.0" name="NVRLogging" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="4e6ef2b3-d9b9-4179-be02-1dca568a7606" />
+  </features>
+</package>

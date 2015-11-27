@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FE39295-C795-4701-8305-B06C6F1057FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Navertica.SharePoint.SPTools</RootNamespace>
+    <AssemblyName>Navertica.SPTools</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.30, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NVRLibraries\Lib\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NVRLibraries\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.SharePoint.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=ef4330804b3c4129, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NVRLibraries\Lib\Microsoft.Practices.SharePoint.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=cde11cd8ecc94417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NVRLibraries\Lib\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PGK.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f93e897f802ddcb7, processorArchitecture=MSIL">
+      <HintPath>packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SPMeta2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NVRLibraries\Lib\SPMeta2.dll</HintPath>
+    </Reference>
+    <Reference Include="SPMeta2.SSOM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NVRLibraries\Lib\SPMeta2.SSOM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="ControlTemplates\NVRPageHead.ascx.cs">
+      <DependentUpon>NVRPageHead.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\NVRPageHead.ascx.designer.cs">
+      <DependentUpon>NVRPageHead.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeployTools.cs" />
+    <Compile Include="Elements\FieldJSON\JSONField.cs" />
+    <Compile Include="Features\NVRInfrastructure\NVRInfrastructure.EventReceiver.cs">
+      <DependentUpon>NVRInfrastructure.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\NVRPageHead.CSS\NVRPageHead.CSS.EventReceiver.cs">
+      <DependentUpon>NVRPageHead.CSS.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\NVRPageHead.JavaScript\NVRPageHead.JavaScript.EventReceiver.cs">
+      <DependentUpon>NVRPageHead.JavaScript.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\NVRPageHead.Ribbon\NVRPageHead.Ribbon.EventReceiver.cs">
+      <DependentUpon>NVRPageHead.Ribbon.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\NVRPageHead.Translations\NVRPageHead.EventReceiver.cs" />
+    <Compile Include="InfrastructureDefinitions.cs" />
+    <Compile Include="Layouts\Execute.aspx.cs">
+      <DependentUpon>Execute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\Execute.aspx.designer.cs">
+      <DependentUpon>Execute.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\NVR.SPTools\GetScript.aspx.cs">
+      <DependentUpon>GetScript.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\NVR.SPTools\GetScript.aspx.designer.cs">
+      <DependentUpon>GetScript.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\NVR.SPTools\Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NaverticaFeatureReceiver.cs" />
+    <Compile Include="PageHead\CSS.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageHead\IntroJS.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageHead\IPageHead.cs" />
+    <Compile Include="PageHead\JavaScript.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageHead\Ribbon.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageHead\Translations.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receivers\EmailReceiver\EmailReceiver.cs" />
+    <Compile Include="Receivers\GlobalItemReceiver\GlobalItemReceiver.cs" />
+    <Compile Include="Receivers\ItemReceiver\ItemReceiver.cs" />
+    <Compile Include="Receivers\ListReceiver\ListReceiver.cs" />
+    <Compile Include="Receivers\WebReceiver\WebReceiver.cs" />
+    <Compile Include="Receivers\WorkflowReceiver\WorkflowReceiver.cs" />
+    <Compile Include="TimerJob.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ControlTemplates\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b864886c-81fb-4c23-9486-535afb177b5e}</SharePointProjectItemId>
+    </None>
+    <None Include="Elements\FieldJSON\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9e899394-7d18-4805-a032-440329fd4ea4}</SharePointProjectItemId>
+    </None>
+    <None Include="Elements\NVRPageHead\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ac7ddbde-e7f6-4751-938f-4a0ac78fccae}</SharePointProjectItemId>
+    </None>
+    <None Include="Elements\SiteActions\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b8f0bfb6-5615-49fe-9c14-854b595983cd}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\NVRFieldJSON\NVRFieldJSON.feature">
+      <FeatureId>{fccbb5c7-4c5b-439c-ba15-b6590c8bdb06}</FeatureId>
+    </None>
+    <None Include="Features\NVRInfrastructure\NVRInfrastructure.feature">
+      <FeatureId>{00c03836-3f84-4388-a34c-1a33fad430e7}</FeatureId>
+    </None>
+    <None Include="Features\NVRPageHead.CSS\NVRPageHead.CSS.feature">
+      <FeatureId>{468fe9e9-eed8-410f-9d7a-14ee6699c0bd}</FeatureId>
+    </None>
+    <None Include="Features\NVRPageHead.JavaScript\NVRPageHead.JavaScript.feature">
+      <FeatureId>{ce72f705-76d5-4cbe-85f3-0128d9aa8800}</FeatureId>
+    </None>
+    <None Include="Features\NVRPageHead.Ribbon\NVRPageHead.Ribbon.feature">
+      <FeatureId>{44368660-55da-4c89-92cd-74b809c07e92}</FeatureId>
+    </None>
+    <None Include="Features\NVRPageHead.Translations\NVRPageHead.Translations.feature">
+      <FeatureId>{c6d9808d-127c-402d-badc-c59d926c310b}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f6cafbb8-339f-4afb-ace9-d2a7d56e8003}</SharePointProjectItemId>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Package\Package.package">
+      <PackageId>{f7081bfc-3356-4c80-8dbd-3bbfa3f4f197}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Receivers\EmailReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0e458718-74ed-48fc-a171-c8739fec69cf}</SharePointProjectItemId>
+    </None>
+    <None Include="Receivers\GlobalItemReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cf32f716-1d6e-4c19-ad28-2f84b66edd1b}</SharePointProjectItemId>
+    </None>
+    <None Include="Receivers\ItemReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{85cf2b70-fd70-45aa-83ea-44703dd696a4}</SharePointProjectItemId>
+    </None>
+    <None Include="Receivers\ListReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{069f19e5-f10f-429d-b36d-51a715daf655}</SharePointProjectItemId>
+    </None>
+    <None Include="Receivers\WebReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2bc45c4b-80f4-41c9-9541-76ded32483c8}</SharePointProjectItemId>
+    </None>
+    <None Include="Receivers\WorkflowReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7cc1292d-fcd6-43e2-96d6-b3de672d4ff4}</SharePointProjectItemId>
+    </None>
+    <None Include="SiteConfig\ExampleJS.json" />
+    <None Include="SiteConfig\ExampleJS.metadata.json" />
+    <None Include="SiteConfig\ExtendAppInstallEntries.json" />
+    <None Include="SiteConfig\ExtendAppInstallEntries.metadata.json" />
+    <None Include="SiteConfig\FormIteratorAddAnApp.json" />
+    <None Include="SiteConfig\FormIteratorAddAnApp.metadata.json" />
+    <None Include="SiteConfig\RibbonAddAnApp.json" />
+    <None Include="SiteConfig\RibbonAddAnApp.metadata.json" />
+    <None Include="SiteConfig\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d968436d-94df-45eb-8b56-612bf9369574}</SharePointProjectItemId>
+    </None>
+    <None Include="SiteConfig\SiteConfigReload.json" />
+    <None Include="SiteConfig\SiteConfigReload.metadata.json" />
+    <None Include="SiteConfig\SiteScriptsReload.json" />
+    <None Include="SiteConfig\SiteScriptsReload.metadata.json" />
+    <None Include="SiteScripts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f266710f-9bb3-4127-801b-c29ddd41bde0}</SharePointProjectItemId>
+    </None>
+    <None Include="XML\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dea31a7d-6acc-4da4-83b0-c7160aa27b52}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Navertica.SharePoint.Extensions\Navertica.SharePoint.Extensions.csproj">
+      <Project>{a03fc531-7646-421f-89cc-b66a4354ae4f}</Project>
+      <Name>Navertica.SharePoint.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRConfigService\NVRConfigService.csproj">
+      <Project>{30f0fd58-c946-4363-a772-b9f45f0147f2}</Project>
+      <Name>NVRConfigService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRLibraries\NVRLibraries.csproj">
+      <Project>{f85f7d1c-4d50-4ca9-b4c5-1c3c1c86c9e3}</Project>
+      <Name>NVRLibraries</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRLogging\NVRLogging.csproj">
+      <Project>{73812530-f20c-498a-9a42-ad7afb520626}</Project>
+      <Name>NVRLogging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRPluginEngine\NVRPluginEngine.csproj">
+      <Project>{1a734ea9-6b0b-4c49-b041-4d39455f877c}</Project>
+      <Name>NVRPluginEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRRepoService\NVRRepoService.csproj">
+      <Project>{51e771db-bef4-4529-91a3-8f2b2220eec6}</Project>
+      <Name>NVRRepoService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRUtilities\NVRUtilities.csproj">
+      <Project>{ef507537-480f-4128-84a4-64357f4e1623}</Project>
+      <Name>NVRUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ControlTemplates\NVRPageHead.ascx" />
+    <Content Include="Elements\FieldJSON\Elements.xml" />
+    <Content Include="Elements\NVRPageHead\Elements.xml" />
+    <Content Include="Elements\SiteActions\Elements.xml" />
+    <Content Include="Features\NVRFieldJSON\NVRFieldJSON.Template.xml">
+      <DependentUpon>NVRFieldJSON.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\NVRInfrastructure\NVRInfrastructure.Template.xml">
+      <DependentUpon>NVRInfrastructure.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\NVRPageHead.CSS\NVRPageHead.CSS.Template.xml">
+      <DependentUpon>NVRPageHead.CSS.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\NVRPageHead.JavaScript\NVRPageHead.JavaScript.Template.xml">
+      <DependentUpon>NVRPageHead.JavaScript.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\NVRPageHead.Ribbon\NVRPageHead.Ribbon.Template.xml">
+      <DependentUpon>NVRPageHead.Ribbon.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\NVRPageHead.Translations\NVRPageHead.Translations.Template.xml">
+      <DependentUpon>NVRPageHead.Translations.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\Execute.aspx" />
+    <Content Include="Layouts\NVR.SPTools\CSRAssets\CSRFieldType.js" />
+    <Content Include="Layouts\NVR.SPTools\CSRAssets\CustomScriptFieldType.js" />
+    <Content Include="Layouts\NVR.SPTools\CSRAssets\VacationsCalendarResources\jquery.continuousCalendar-latest-min.css" />
+    <Content Include="Layouts\NVR.SPTools\CSRAssets\VacationsCalendarResources\jquery.continuousCalendar-latest-min.js" />
+    <Content Include="Layouts\NVR.SPTools\CSRAssets\VacationsCalendarResources\jquery.debug.js" />
+    <Content Include="Layouts\NVR.SPTools\CSRAssets\VacationsCalendarResources\jquery.timepicker.css" />
+    <Content Include="Layouts\NVR.SPTools\CSRAssets\VacationsCalendarResources\jquery.timepicker.min.js" />
+    <Content Include="Layouts\NVR.SPTools\CSRAssets\VacationsCalendarTemplate.js" />
+    <Content Include="Layouts\NVR.SPTools\GetScript.aspx" />
+    <Content Include="Layouts\NVR.SPTools\JSONField.js" />
+    <Content Include="Layouts\NVR.SPTools\Status.aspx" />
+    <Content Include="Layouts\NVR.SPTools\UrlJSLink.js" />
+    <Content Include="Receivers\EmailReceiver\Elements.xml" />
+    <Content Include="Receivers\GlobalItemReceiver\Elements.xml" />
+    <Content Include="Receivers\ItemReceiver\Elements.xml" />
+    <Content Include="Receivers\ListReceiver\Elements.xml" />
+    <Content Include="Receivers\WebReceiver\Elements.xml" />
+    <Content Include="Receivers\WorkflowReceiver\Elements.xml" />
+    <Content Include="SiteScripts\Etc\executetestplugin.py" />
+    <Content Include="SiteScripts\Etc\itemactiontestplugin.py" />
+    <Content Include="SiteScripts\Etc\__init__.py" />
+    <Content Include="SiteScripts\JSLibs\Ribbon.js" />
+    <Content Include="SiteScripts\JS\createButtons.js" />
+    <Content Include="SiteScripts\JS\ExampleJS.js" />
+    <Content Include="SiteScripts\JS\extendAppInstallEntries.js" />
+    <Content Include="SiteScripts\JS\middleMouseEverywhere.js" />
+    <Content Include="SiteScripts\NVR\Ribbon\Info.html" />
+    <Content Include="SiteScripts\NVR\Ribbon\NVRAddAppEntriesIcon.js" />
+    <Content Include="SiteScripts\NVR\SiteConfigUpdatedPlugin.py" />
+    <Content Include="SiteScripts\NVR\SiteScriptsUpdatedPlugin.py" />
+    <Content Include="SiteScripts\NVR\TESTPlugin.py" />
+    <Content Include="SiteScripts\NVR\__init__.py" />
+    <Content Include="SiteScripts\Schema\DerivedAction.js" />
+    <Content Include="SiteScripts\Schema\FormIterator.js" />
+    <Content Include="SiteScripts\Schema\GlobalItemUpdating.js" />
+    <Content Include="SiteScripts\Schema\Helper.js" />
+    <Content Include="SiteScripts\Schema\ItemAdded.js" />
+    <Content Include="SiteScripts\Schema\ItemDeleting.js" />
+    <Content Include="SiteScripts\Schema\ItemReceiver.js" />
+    <Content Include="SiteScripts\Schema\ItemUpdated.js" />
+    <Content Include="SiteScripts\Schema\ItemUpdating.js" />
+    <Content Include="SiteScripts\Schema\JavaScripts.js" />
+    <Content Include="SiteScripts\Schema\NVR_SiteConfigJSON.js" />
+    <Content Include="SiteScripts\Schema\Ribbon.js" />
+    <Content Include="SiteScripts\Schema\schSingleUrl.js" />
+    <Content Include="SiteScripts\Schema\Temp.js" />
+    <Content Include="SiteScripts\Schema\Translations.js" />
+    <Content Include="XML\fldtypes_JSONFieldType.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

@@ -1,0 +1,32 @@
+﻿<ps:Config xmlns:ps="urn:Microsoft.SharePoint.PowerShell"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:schemaLocation="urn:Microsoft.SharePoint.PowerShell SPCmdletSchema.xml">
+  <ps:Assembly Name="$SharePoint.Project.AssemblyFullName$">
+    <ps:Cmdlet>
+      <ps:VerbName>New-ConfigServiceApplication</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.7035863f-ca9c-4f3c-a24a-8387ccdb66ae.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Remove-ConfigService</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.b1cddf19-a022-4003-a68b-0e93c7016a2e.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>New-ConfigServiceApplicationProxy</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.a8806e71-a98c-40e2-8e60-4aec0af994a3.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Set-ConfigServiceApplication</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.b2ed5487-cbf5-440a-b19b-6ed0635c141f.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Set-ConfigServiceApplicationProxy</ps:VerbName>
+      <ps:ClassName>$SharePoint.Type.a6db3a82-b544-4d4e-96bd-27dcc65bcb5a.FullName$</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+  </ps:Assembly>
+</ps:Config>
+

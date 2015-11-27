@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a48d4d4a-39ce-4c8b-8593-6b88da9db745" solutionId="a48d4d4a-39ce-4c8b-8593-6b88da9db745" resetWebServer="true" title="Scripts Service Application" description="Installs the Scripts Service Application" sharePointProductVersion="15.0" name="NVRRepoService" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="e90b5941-2ee7-4034-aaac-3b0a321e5f7d" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="ec5830d5-804d-483b-b463-eec9bbf78cdd" />
+    <projectItemReference itemId="667bcc39-ecc5-4888-a5c5-907301a5f971" />
+    <projectItemReference itemId="cc7bb27e-91b9-48d0-81b3-f9c6772875a7" />
+    <projectItemReference itemId="4339cadf-6e79-45c7-8743-1dc7e058a7f9" />
+    <projectItemReference itemId="4ba00ecb-3d43-43ed-86f8-e393360f1508" />
+    <projectItemReference itemId="b006135e-b95e-4c0f-85c0-b48447e6d0ba" />
+  </projectItems>
+</package>

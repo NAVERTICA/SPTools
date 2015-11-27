@@ -1,0 +1,11 @@
+﻿{
+  "ContentType": "NVR_SiteConfigJSON",
+  "NVR_SiteConfigApp": "JavaScripts",
+  "NVR_SiteConfigPackage": "Examples",
+  "NVR_SiteConfigListType": null,
+  "NVR_SiteConfigUrl": "/*",
+  "NVR_SiteConfigOrder": 10,  
+  "NVR_SiteConfigActive": true,
+  "NVR_SiteConfigApproved": true,
+  "Title": "JavaScript example"
+}

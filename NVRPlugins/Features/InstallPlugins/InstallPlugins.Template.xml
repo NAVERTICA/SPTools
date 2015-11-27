@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Properties>
+    <Property Key="NVR_SiteScriptsFolder" Value="{0}\LAYOUTS\NVRPlugins\SiteScripts\" />
+    <Property Key="NVR_SiteConfigFolder" Value="{0}\LAYOUTS\NVRPlugins\SiteConfig\" />
+  </Properties>
+</Feature>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="2404c8ed-b97e-45cc-aa66-feb95685f8b2" solutionId="2404c8ed-b97e-45cc-aa66-feb95685f8b2" resetWebServer="false" sharePointProductVersion="15.0" name="NVRLibraries" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="IronPython.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Lib\IronPython.dll" />
+    <customAssembly location="Microsoft.Dynamic.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Lib\Microsoft.Dynamic.dll" />
+    <customAssembly location="Microsoft.Practices.ServiceLocation.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Lib\Microsoft.Practices.ServiceLocation.dll" />
+    <customAssembly location="Microsoft.Practices.SharePoint.Common.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Lib\Microsoft.Practices.SharePoint.Common.dll" />
+    <customAssembly location="Microsoft.Scripting.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Lib\Microsoft.Scripting.dll" />
+    <customAssembly location="Gibraltar.Agent.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Lib\Gibraltar.Agent.dll" />
+    <customAssembly location="LibGit2Sharp.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Lib\LibGit2Sharp.dll" />
+    <customAssembly location="SPMeta2.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Lib\SPMeta2.dll" />
+    <customAssembly location="SPMeta2.SSOM.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Lib\SPMeta2.SSOM.dll" />
+    <customAssembly location="NVRUtilities.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\NVRUtilities\bin\Debug\NVRUtilities.dll" />
+    <customAssembly location="Navertica.SharePoint.Extensions.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Navertica.SharePoint.Extensions\bin\Debug\Navertica.SharePoint.Extensions.dll" />
+    <customAssembly location="PGK.Extensions.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Navertica.SPTools\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll" />
+    <customAssembly location="Newtonsoft.Json.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Navertica.SPTools\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll" />
+  </assemblies>
+  <projectItems>
+    <projectItemReference itemId="28e75eb6-150f-427a-aefa-0dcee4b1c92d" />
+  </projectItems>
+</package>

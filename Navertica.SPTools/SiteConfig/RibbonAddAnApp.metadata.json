@@ -1,0 +1,11 @@
+﻿{
+  "ContentType": "NVR_SiteConfigJSON",
+  "NVR_SiteConfigApp": "JavaScripts",
+  "NVR_SiteConfigPackage": "SPTools",
+  "NVR_SiteConfigListType": null,
+  "NVR_SiteConfigUrl": "*/_layouts/15/addanapp.aspx*",
+  "NVR_SiteConfigOrder": 1,  
+  "NVR_SiteConfigActive": true,
+  "NVR_SiteConfigApproved": true,
+  "Title": "Add Ribbon into 'Add an App' page"
+}

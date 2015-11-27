@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FieldTypes>
+  <FieldType>
+    <Field Name="TypeName">JSONField</Field>
+    <Field Name="TypeDisplayName">JSON</Field>
+    <Field Name="TypeShortDescription">JSON</Field>
+    <Field Name="UserCreatable">TRUE</Field>
+    <Field Name="ParentType">Note</Field>
+    <Field Name="ShowOnListCreate">TRUE</Field>
+    <Field Name="ShowOnSurveyCreate">TRUE</Field>
+    <Field Name="ShowOnDocumentLibrary">TRUE</Field>
+    <Field Name="ShowOnColumnTemplateCreate">TRUE</Field>
+    <Field Name="Sortable">FALSE</Field>
+    <Field Name="Filterable">FALSE</Field>
+    <Field Name="ReadOnly">FALSE</Field>
+    <Field Name="RichText">FALSE</Field>
+    <Field Name="FieldTypeClass">Navertica.SharePoint.Fields.JSONField, $SharePoint.Project.AssemblyFullName$</Field>
+  </FieldType>
+</FieldTypes>

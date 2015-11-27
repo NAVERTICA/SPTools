@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f7081bfc-3356-4c80-8dbd-3bbfa3f4f197" solutionId="f7081bfc-3356-4c80-8dbd-3bbfa3f4f197" resetWebServer="false" sharePointProductVersion="15.0" name="Navertica.SPTools" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="00c03836-3f84-4388-a34c-1a33fad430e7" />
+    <featureReference itemId="fccbb5c7-4c5b-439c-ba15-b6590c8bdb06" />
+    <featureReference itemId="468fe9e9-eed8-410f-9d7a-14ee6699c0bd" />
+    <featureReference itemId="ce72f705-76d5-4cbe-85f3-0128d9aa8800" />
+    <featureReference itemId="44368660-55da-4c89-92cd-74b809c07e92" />
+    <featureReference itemId="c6d9808d-127c-402d-badc-c59d926c310b" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="f6cafbb8-339f-4afb-ace9-d2a7d56e8003" />
+    <projectItemReference itemId="b864886c-81fb-4c23-9486-535afb177b5e" />
+    <projectItemReference itemId="dea31a7d-6acc-4da4-83b0-c7160aa27b52" />
+    <projectItemReference itemId="ac7ddbde-e7f6-4751-938f-4a0ac78fccae" />
+    <projectItemReference itemId="9e899394-7d18-4805-a032-440329fd4ea4" />
+    <projectItemReference itemId="d968436d-94df-45eb-8b56-612bf9369574" />
+    <projectItemReference itemId="f266710f-9bb3-4127-801b-c29ddd41bde0" />
+    <projectItemReference itemId="b8f0bfb6-5615-49fe-9c14-854b595983cd" />
+  </projectItems>
+</package>

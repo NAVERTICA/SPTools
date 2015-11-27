@@ -1,0 +1,3 @@
+﻿<%@ServiceHost Language="C#" Debug="true"
+               Service="$SharePoint.Type.ad6cf79e-312a-4424-a62d-7ba63f82099f.AssemblyQualifiedName$"
+               Factory="$SharePoint.Type.0b491121-82c6-4a20-bfa2-d57f77d131db.AssemblyQualifiedName$" %>
