@@ -1,4 +1,4 @@
-Navertica.SPTools (coming in a few days)
+Navertica.SPTools (alpha version, not for production)
 ===========
 
 For on-premise SharePoint 2013, both Foundation and Server.
@@ -91,7 +91,7 @@ Properties:
     This file contains a function that will construct a JSON schema and pass it to json-edit to dynamically build a form with it.
 	
 
-Installation
+Installation (to be continued)
 ===========
 Order of installation (solutions are not currently stapled): 
 
@@ -103,7 +103,7 @@ Order of installation (solutions are not currently stapled):
 8) Navertica.SPTools
 
 
-Installing Services
+Installing Services (to be continued)
 ========================
 Only a single instance of each service should be running in a farm.
 
@@ -121,7 +121,7 @@ PowerShell scripts for the entire installation are being prepared.
 5. Both proxies need to be associated with the web application where we want to use them - Service Application Associations (_admin/ApplicationAssociations.aspx)
 
 
-Building addons using SPTools
+Building addons using SPTools (to be continued)
 ========
 
 Not every enhancement and functionality has to be an addon, but for pieces that will be used frequently, it's worth doing it right.
@@ -216,3 +216,9 @@ The feature in the .wsp should have a feature event receiver that is inherited f
 The feature also has to have two custom properties defined, NVR_SiteScriptsFolder and NVR_SiteConfigFolder, where the relative way to the 
 _LAYOUTS/YOUR_FEATURE_FOLDER/SiteConfig and SiteScripts is stored, so that on activation all the files get copied to SiteConfig and SiteScripts.
 
+Copyright (C) 2015 NAVERTICA a.s. http://www.navertica.com 
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
