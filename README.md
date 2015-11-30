@@ -21,7 +21,7 @@ Tl;dr
     </tr>
     <tr>
 		<td>Development</td>
-		<td>Use your favorite scripting language and environment or our [browser scripting console](http://www.navertica.com/en/Lists/News/DispForm.aspx?ID=23) - embedded editor upcoming. Save the file
+		<td>Use your favorite scripting language and environment or our <a href="http://www.navertica.com/en/Lists/News/DispForm.aspx?ID=23">in-browser scripting console</a> - embedded editor upcoming. Save the file
 		in our SiteScripts library, and it's done</td>
 		<td>Use Visual Studio to write code, compile to DLL, deploy</td>		
     </tr>
@@ -49,7 +49,7 @@ Tl;dr
     </tr>
     <tr>
 		<td>Debugging</td>
-		<td>Add a debug statement to your script, open [wdb](https://github.com/Kozea/wdb) in another browser tab and step through your code in all comfort, 
+		<td>Add a debug statement to your script, open <a href="https://github.com/Kozea/wdb">wdb web debugger</a> in another browser tab and step through your code in all comfort, 
 		without blocking other users and operations (IronPython only, upcoming feature) </td>
 		<td>Build and deploy a debug version of your assembly, attach Visual Studio to the right processes, block all other operations on the portal until debugging ends...</td>		
     </tr>	
