@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a540be04-8117-4ecf-8e1d-3c8fe4485f5a" solutionId="a540be04-8117-4ecf-8e1d-3c8fe4485f5a" resetWebServer="false" sharePointProductVersion="15.0" name="NVRFormIterator" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="c5001927-b018-4a94-9261-2e2dbf19e133" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="29a989b3-093b-4c5d-b637-a6d5e9faf2f0" />
+  </projectItems>
+</package>

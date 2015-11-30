@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BB57DC4-92A3-4156-B7D8-2035357B3166}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Navertica.SharePoint</RootNamespace>
+    <AssemblyName>NVRFormIterator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Navertica.SPTools\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NVRFormIterator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CONTROLTEMPLATES\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{29a989b3-093b-4c5d-b637-a6d5e9faf2f0}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\NVRFormIterator\NVRFormIterator.feature">
+      <FeatureId>{c5001927-b018-4a94-9261-2e2dbf19e133}</FeatureId>
+    </None>
+    <None Include="FormIteratorPageHead\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e212cb80-7551-4aee-985e-42497a546368}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+    <None Include="Package\Package.package">
+      <PackageId>{a540be04-8117-4ecf-8e1d-3c8fe4485f5a}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CONTROLTEMPLATES\NVRFormIterator.ascx" />
+    <Content Include="CONTROLTEMPLATES\NVRFormIteratorPageHead.ascx" />
+    <Content Include="Features\NVRFormIterator\NVRFormIterator.Template.xml">
+      <DependentUpon>NVRFormIterator.feature</DependentUpon>
+    </Content>
+    <Content Include="FormIteratorPageHead\Elements.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Navertica.SharePoint.Extensions\Navertica.SharePoint.Extensions.csproj">
+      <Project>{a03fc531-7646-421f-89cc-b66a4354ae4f}</Project>
+      <Name>Navertica.SharePoint.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRConfigService\NVRConfigService.csproj">
+      <Project>{30f0fd58-c946-4363-a772-b9f45f0147f2}</Project>
+      <Name>NVRConfigService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRLogging\NVRLogging.csproj">
+      <Project>{73812530-f20c-498a-9a42-ad7afb520626}</Project>
+      <Name>NVRLogging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRPluginEngine\NVRPluginEngine.csproj">
+      <Project>{1a734ea9-6b0b-4c49-b041-4d39455f877c}</Project>
+      <Name>NVRPluginEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRRepoService\NVRRepoService.csproj">
+      <Project>{51e771db-bef4-4529-91a3-8f2b2220eec6}</Project>
+      <Name>NVRRepoService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NVRUtilities\NVRUtilities.csproj">
+      <Project>{ef507537-480f-4128-84a4-64357f4e1623}</Project>
+      <Name>NVRUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
