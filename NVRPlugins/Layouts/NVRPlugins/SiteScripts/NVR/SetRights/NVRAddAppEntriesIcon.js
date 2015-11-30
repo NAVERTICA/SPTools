@@ -1,33 +1,16 @@
 ﻿(function() {
     if (!window["NVRAddAppEntries"]) window["NVRAddAppEntries"] = {};
 
+    var tmpsrc = NVR.common.get_url_param("Source");
+    var relSource = NVR.getUrlParts(decodeURIComponent(tmpsrc)).pathname;
 
-    function getUrlParts(url) {
-        var a = document.createElement('a');
-        a.href = url;
-
-        return {
-            href: a.href,
-            host: a.host,
-            hostname: a.hostname,
-            port: a.port,
-            pathname: a.pathname,
-            protocol: a.protocol,
-            hash: a.hash,
-            search: a.search
-        };
-    }
-
-    var tmpsrc = get_url_param("Source");
-    var relSource = getUrlParts(decodeURIComponent(tmpsrc)).pathname;
-    console.log("relSource", relSource);
 
     window["NVRAddAppEntries"]["SetRights"] =
     {
         "Name": "SetRights",
         "IconUrl": "/_layouts/15/images/LTOBJECT.PNG?rev=23",
         "AppInstallUrl": "/Lists/SiteConfig/NewForm.aspx?"
-            + "NVR_SiteConfigActive=true&NVR_SiteConfigActiveFor=" + encodeURIComponent(ContextGuids.userlogin) 
+            + "NVR_SiteConfigActive=true" 
             + "&NVR_SiteConfigApp=SetRights--I%0AItemUpdated%0AItemAdded&Title=SetRights%20-%20/" + relSource
             + "&NVR_SiteConfigPackage=Receivers"
             + "&Source=" + tmpsrc

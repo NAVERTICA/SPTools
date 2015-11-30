@@ -1,41 +1,31 @@
 ﻿(function() {
     if (!window["NVRAddAppEntries"]) window["NVRAddAppEntries"] = {};
 
+    var appName = "DuplicateFields";
+    var connectedApps = ["ItemUpdated", "ItemAdded"]; // []
+    var packageName = "Receivers";
+    var contentTypeId = "";
+    var infoFilePath = "/NVR/DuplicateFields/Info.html";
+    var minimalJSONconfig = '{"ItemUpdated": {"DuplicateFields--I": "DuplicateFields"},"ItemAdded": {"DuplicateFields--I": "DuplicateFields"} }';
 
-    function getUrlParts(url) {
-        var a = document.createElement('a');
-        a.href = url;
 
-        return {
-            href: a.href,
-            host: a.host,
-            hostname: a.hostname,
-            port: a.port,
-            pathname: a.pathname,
-            protocol: a.protocol,
-            hash: a.hash,
-            search: a.search
-        };
-    }
-
-    var tmpsrc = get_url_param("Source");
-    var relSource = getUrlParts(decodeURIComponent(tmpsrc)).pathname;
-    console.log("relSource", relSource);
-
-    window["NVRAddAppEntries"]["DuplicateFields"] =
+    var tmpsrc = NVR.common.get_url_param("Source");
+    var relSource = NVR.getUrlParts(decodeURIComponent(tmpsrc)).pathname;
+    
+    window["NVRAddAppEntries"][appName] =
     {
-        "Name": "DuplicateFields",
+        "Name": appName,
         "IconUrl": "/_layouts/15/images/ltdl.png?rev=23",
         "AppInstallUrl": "/Lists/SiteConfig/NewForm.aspx?"
-            + "NVR_SiteConfigActive=true&NVR_SiteConfigActiveFor=" + encodeURIComponent(ContextGuids.userlogin) /* TODO old SPTools */
-            + "&NVR_SiteConfigApp=DuplicateFields--I%0AItemUpdated%0AItemAdded&Title=DuplicateFields%20-%20/" + relSource
-            + "&NVR_SiteConfigPackage=Receivers"
+            + "NVR_SiteConfigActive=true"
+            + "&NVR_SiteConfigApp=" + appName + connectedApps.join("%0A") + "&Title=" + appName + "%20-%20/" + relSource
+            + "&NVR_SiteConfigPackage=" + packageName
             + "&Source=" + tmpsrc
             + "&NVR_SiteConfigUrl=/" + relSource
-            + "&NVR_SiteConfigJSON=" + encodeURIComponent('{"ItemUpdated": {"DuplicateFields--I": "DuplicateFields"},"ItemAdded": {"DuplicateFields--I": "DuplicateFields"} }')
-            + "&ContentTypeId=0x010000AF00A19FBA41D68E7FDB37BCB1847B",
+            + "&NVR_SiteConfigJSON=" + encodeURIComponent(minimalJSONconfig)
+            + "&ContentTypeId=" + contentTypeId,
         "AppDetailsUrl": 'javascript:SP.UI.ModalDialog.showModalDialog({' +
-            'url: "/_layouts/15/NVR.SPTools/GetScript.aspx?FilePaths=/NVR/DuplicateFields/Info.html",' +
+            'url: "/_layouts/15/NVR.SPTools/GetScript.aspx?FilePaths=' + infoFilePath + '",' +
             'width: 800,' +
             'height: 600,' +
             'allowMaximize: true});'
