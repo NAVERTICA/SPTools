@@ -9,9 +9,9 @@ Alpha version, not for production.
 
 Tl;dr
 ------
-- Extend SharePoint using your favorite scripting languages (IronPython and any other Dynamic Runtime Language, dynamically compiled C# upcoming) - no need for Visual Studio for even the tiniest modifications
+- Extend SharePoint using your favorite scripting languages (IronPython and other Dynamic Runtime Languages, runtime-compiled C# upcoming) - no need for Visual Studio for even the tiniest modifications
 - Configure and activate all extensions from a single custom list with dynamically built form UI
-- Develop, test and debug even on a production portal without the users noticing anything
+- Develop, test and debug even on a production portal without the users noticing 
 
 <table>
     <tr>
@@ -21,7 +21,8 @@ Tl;dr
     </tr>
     <tr>
 		<td>Development</td>
-		<td>Use your favorite scripting language, save, activate for yourself, test, activate for everyone - all from SharePoint</td>
+		<td>Use your favorite scripting language and environment or our [browser scripting console](http://www.navertica.com/en/Lists/News/DispForm.aspx?ID=23) - embedded editor upcoming. Save the file
+		in our SiteScripts library, and it's done</td>
 		<td>Use Visual Studio to write code, compile to DLL, deploy</td>		
     </tr>
     <tr>
@@ -36,20 +37,21 @@ Tl;dr
     </tr>
 	<tr>
 		<td>Activation</td>
-		<td>Everything is activated by adding a configuration entry in a centralized list, and will be immediately active for given URLs, content types, list types, etc. Moreover,
+		<td>Everything is activated by adding a configuration entry in our SiteConfig list, and will be immediately active for given URLs, content types, list types, etc. Moreover,
 		configurations can be active only for certain people (developers, testers)</td>
-		<td>Depends on what type of addon - some things can be deployed with XML, some have to be manually added (lots of clicking and different screens), no easy oversight</td>		
+		<td>Depends on the type of addon - some things can be deployed with XML on feature activation, some have to be manually added using lots of different screens, there's no one single place to look 
+		to oversee it all</td>		
     </tr>
 	<tr>
 		<td>Testing</td>
 		<td>Using dynamic languages and our extensions it's much easier to write easy-to-test code, and all tests can be run via our status page</td>
-		<td>Possible (using mock objects) but hard and hardly integrated</td>		
+		<td>Possible but hard and hardly integrated</td>		
     </tr>
     <tr>
 		<td>Debugging</td>
 		<td>Add a debug statement to your script, open [wdb](https://github.com/Kozea/wdb) in another browser tab and step through your code in all comfort, 
 		without blocking other users and operations (IronPython only, upcoming feature) </td>
-		<td>Build and deploy a debug version of your assembly, attach Visual Studio to the right processes, block all other operations on the portal until debugging ends..</td>		
+		<td>Build and deploy a debug version of your assembly, attach Visual Studio to the right processes, block all other operations on the portal until debugging ends...</td>		
     </tr>	
 </table>
 
