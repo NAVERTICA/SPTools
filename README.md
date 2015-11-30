@@ -9,60 +9,47 @@ Alpha version, not for production.
 
 Tl;dr
 ------
-- Extend SharePoint using your favorite scripting languages (anything DLR, dynamically compiled C# upcoming).
-	- Use DLR languages like IronPython in event receivers, timerjobs, pages...
-	- Plugins can be created using DLR languages as well as C# and deployed in farm *without downtime*
-	- All the scripts, plugins and JavaScript enhancements are stored in a single place, the SiteScripts library
-- Configure and deploy all extensions from a single list
-	- Configurations for all the plugins are also stored in a single place, the SiteConfig custom list, in our custom JSONField
-	- System knows where different plugins should run via properties (like URL, ContentType...) of each configuration entry. 
-	It's possible to use wildcards and exclude certain patterns in these properties, so it's very easy to for example:
-		- include a JS mod on every EditForm in a subweb by setting the URL of its SiteConfig entry to /subweb/*/EditForm.aspx
-		- have a receiver run on every item with a content type by leaving URL blank and setting CT property to 0x0108...
-	- To make things easier, the Add an App menu is extended with icons of installed plugins, which redirect to and prefill a new SiteConfig entry
-	- The custom JSONField in SiteConfig stores configuration data as JSON. 
-	  It can work as a simple text editor (add parameter Default=1 to URL), but it's able to construct complex forms 
-	  that allow configurating to be interactive and safe by letting you choose lists, fields, etc. instead of typing down
-      their names. 
-	- Configuration entries can be enabled only for certain users, so it's possible to develop, test and deploy plugins and 
-      modifications without anyone noticing.
+- Extend SharePoint using your favorite scripting languages (IronPython and any other Dynamic Runtime Language, dynamically compiled C# upcoming) - no need for Visual Studio for even the tiniest modifications
+- Configure and activate all extensions from a single custom list with dynamically built form UI
+- Develop, test and debug even on a production portal without the users noticing anything
 
 <table>
     <tr>
 		<th>Activity</th>
-		<th>Classic SharePoint</th>
 		<th>SharePoint with SPTools</th>
+		<th>Classic SharePoint</th>		
     </tr>
     <tr>
 		<td>Development</td>
-		<td>Use Visual Studio to write code, compile to DLL, deploy</td>
 		<td>Use your favorite scripting language, save, activate for yourself, test, activate for everyone - all from SharePoint</td>
+		<td>Use Visual Studio to write code, compile to DLL, deploy</td>		
     </tr>
     <tr>
 		<td>Deployment</td>
-		<td>Use command line/PowerShell scripts, reset farm after even the tiniest change</td>
 		<td>Have changes deployed instantly after saving script</td>
+		<td>Use command line/PowerShell scripts, reset farm after even the tiniest change</td>		
     </tr>
 	<tr>
 		<td>Configuration</td>
-		<td>UI and backend depends on developer</td>
 		<td>Based on JSON, centralized in a list, UI dynamically built using JSON schema and allowing dynamic selection of lists, fields etc.</td>
+		<td>Saved in property bags, lists, databases - depending on the developer. User interface, if any, also depends on developer.</td>		
     </tr>
 	<tr>
 		<td>Activation</td>
-		<td>Depends on what type of addon - some things can be deployed with XML, some have to be manually added (lots of clicking and different screens), no easy oversight</td>
-		<td>Everything activated by adding a configuration entry in a centralized list and targeting it at certain URLs, content types, list types, etc.</td>
+		<td>Everything is activated by adding a configuration entry in a centralized list, and will be immediately active for given URLs, content types, list types, etc. Moreover,
+		configurations can be active only for certain people (developers, testers)</td>
+		<td>Depends on what type of addon - some things can be deployed with XML, some have to be manually added (lots of clicking and different screens), no easy oversight</td>		
     </tr>
 	<tr>
 		<td>Testing</td>
-		<td>Possible (using mock objects) but hard and hardly integrated</td>
 		<td>Using dynamic languages and our extensions it's much easier to write easy-to-test code, and all tests can be run via our status page</td>
+		<td>Possible (using mock objects) but hard and hardly integrated</td>		
     </tr>
     <tr>
 		<td>Debugging</td>
-		<td>Build and deploy a debug version of your assembly, attach Visual Studio to the right processes, block all other operations on the portal until debugging ends..</td>
 		<td>Add a debug statement to your script, open [wdb](https://github.com/Kozea/wdb) in another browser tab and step through your code in all comfort, 
 		without blocking other users and operations (IronPython only, upcoming feature) </td>
+		<td>Build and deploy a debug version of your assembly, attach Visual Studio to the right processes, block all other operations on the portal until debugging ends..</td>		
     </tr>	
 </table>
 
