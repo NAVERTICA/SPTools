@@ -13,7 +13,7 @@
     You should have received a copy of the GNU General Public License along
     with this program; if not, write to the Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.  */
-	
+    
 using System;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
@@ -119,14 +119,9 @@ namespace Navertica.SharePoint.Pages
                     {
                         ExecutePluginName(scopeData, site, log);
                     }
-                    else if (!string.IsNullOrWhiteSpace(Request["ScriptPath"]))
-                    {
-                        // TODO - tuto vetev nejspis nebudeme vubec potrebovat, delat vsechno pres pluginy bude bezpecnejsi
-                        ExecuteScriptPath(scriptrepo, scopeData, web, log);
-                    }
                     else
                     {
-                        LogError(log, "Execute.aspx needs PluginName or ScriptPath");
+                        LogError(log, "Execute.aspx needs PluginName");
                     }
                 });
 
@@ -134,38 +129,12 @@ namespace Navertica.SharePoint.Pages
             }
         }
 
-        private void ExecuteScriptPath(RepoServiceClient scriptrepo, DictionaryNVR scopeData, SPWeb web, ILogging log)
-        {
-            try
-            {
-                var context = scriptrepo.Execute(Request["ScriptPath"], new ScriptContext(scopeData));
-
-                if (context == null)
-                {
-                    Response.Write("Invalid path/file name for parameter Script");
-                    Response.StatusCode = 404;
-                    Response.StatusDescription = "Invalid path/file name for parameter Script";
-                    return;
-                }
-
-                web.AllowUnsafeUpdates = false;
-            }
-            catch (Exception exc)
-            {
-                log.LogException("Exception in Execute.aspx, Script " + Request["ScriptPath"], exc);
-                Response.Write("Exception in script\n" + exc);
-                Response.StatusCode = 500;
-                Response.StatusDescription = "Exception in script";
-                return;
-            }
-        }
-
         private void ExecutePluginName(DictionaryNVR scopeData, SPSite site, ILogging log)
         {
             try
             {
-                // TODO - konfigurace by se dala filtrovat podle jmena pluginu + lokace stranky, ze ktere se Execute vola
-                // ted to je na samotnem pluginu, aby si nacetl, co potrebuje
+                // TODO - config could be filtered based on plugin name and referrer
+                // now it's up to the plugin itself to load what it needs
 
                 PluginHost.Init(site);
 
