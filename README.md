@@ -1,4 +1,4 @@
-Navertica.SPTools 
+Navertica.SPTools - IronPython and DLR scripting languages in SharePoint
 ===========
 Enjoy the extensibility of SharePoint without having to deal with cumbersome deployment and misleading APIs
 -----------
