@@ -1,17 +1,18 @@
 Navertica.SPTools - IronPython and DLR scripting languages in SharePoint
 ===========
-Enjoy the extensibility of SharePoint without having to deal with cumbersome deployment and misleading APIs
+Enjoy enhanced extensibility of SharePoint without having to deal with cumbersome deployment and misleading APIs
 -----------
 
-For on-premise SharePoint 2013, both Foundation and Server, using SSOM.
+For on-premise SharePoint 2013, both Foundation and Server, using SSOM (Server Side Object Model).
 
 Alpha version, not for production.
 
-Tl;dr
-------
-- Extend SharePoint using your favorite scripting languages (IronPython and other Dynamic Runtime Languages, runtime-compiled C# upcoming) - no need for Visual Studio for even the tiniest modifications
-- Configure and activate all extensions from a single custom list with dynamically built form UI
-- Develop, test and debug even on a production portal without the users noticing 
+Main features
+-------------
+- SPTools provide a framework which allows you to extend SharePoint in all possible directions using **scripting in IronPython and other DLR (Dynamic Language Runtime) languages**. 
+  Dynamically loaded DLLs can also be integrated, runtime-compiled C# support is upcoming. You don't need to run or even own Visual Studio to do serious SharePoint development.
+- Our approach allows you to activate and **configure all extensions across the portal from a single custom list** with a **wizard-like form UI** bound to actual SharePoint structures.
+- Faster and less demanding development, easier automated testing, transparent administration. And you can debug IronPython scripts even on a production portal without the users noticing.
 
 <table>
     <tr>
@@ -27,18 +28,19 @@ Tl;dr
     </tr>
     <tr>
 		<td>Deployment</td>
-		<td>Have changes deployed instantly after saving script</td>
+		<td>Changes effective immediately after saving script</td>
 		<td>Use command line/PowerShell scripts, reset farm after even the tiniest change</td>		
     </tr>
 	<tr>
 		<td>Configuration</td>
-		<td>Based on JSON, centralized in a list, UI dynamically built using JSON schema and allowing dynamic selection of lists, fields etc.</td>
+		<td>Based on strongly typed classes serialized to JSON, centralized in a list, UI dynamically built using JSON schema and allowing dynamic selection of lists, fields etc.</td>
 		<td>Saved in property bags, lists, databases - depending on the developer. User interface, if any, also depends on developer.</td>		
     </tr>
 	<tr>
 		<td>Activation</td>
-		<td>Everything is activated by adding a configuration entry in our SiteConfig list, and will be immediately active for given URLs, content types, list types, etc. Moreover,
-		configurations can be active only for certain people (developers, testers)</td>
+		<td>Everything is activated by adding a configuration entry in our SiteConfig list, and will be immediately active for given URLs, content types, list types, etc. 
+		Several locations and extensions/plugins can be serviced by a single config entry. Templates and linking to templates upcoming.
+		Moreover, configurations can be active only for certain people (developers, testers)</td>
 		<td>Depends on the type of addon - some things can be deployed with XML on feature activation, some have to be manually added using lots of different screens, there's no one single place to look 
 		to oversee it all</td>		
     </tr>
@@ -55,10 +57,16 @@ Tl;dr
     </tr>	
 </table>
 
-
+------------------------------------------------------------------------------------------
 
 Solution contents
 ==================
+
+Status page
+-----------
+Shows the status of SPTools installation. Tells you if all necessary structures exist, runs tests on all present plugins and reports the results.
+
+Located at /_layouts/15/NVR.SPTools/Status.aspx
 
 NVRConfigService
 ----------------
@@ -69,43 +77,51 @@ running where and with what configuration.
 Only one instance of this service should be running per farm.
 
 NVRRepoService
----------------
+--------------
 Second simple SharePoint Service Application - this one holds scripts that were uploaded to the SiteScripts library.
 The NVRRepoServiceClient is also able to run scripts in different languages using engines that made themselves available through the
 SharePoint Service Locator.
 
 Only one instance of this service should be running per farm.
 
+GetScript.aspx
+--------------
+Used for fast retrieval of one or more JS and CSS files from SiteScripts. Results are cached until some of the files change, in future
+they could also be minified.
+
+Request files like this: /_layouts/15/NVR/GetScript.aspx?FilePaths=/relative/paths.js;/to/files/in/SiteScripts.js
+
 PageHead
---------------------------------
+--------
 This control is added to every page and uses SharePoint Service Locator to run all registered IPageHead providers. Included are
 JavaScript loaders, CSS loaders, dynamic ribbon buttons... and all of them use NVRConfigService
 to find out what should be running in the page being rendered.
 
 ItemReceiver (and ListReceiver, WebReceiver...)
--------------------------------------------
+-----------------------------------------------
 All of these just look to NVRConfigService what plugins are configured to run for given location and event type
 and execute them. Currently these receivers have to be added manually, in the future the plugin install scripts will
 be able to handle that.
 
 GlobalItemReceiver
-----------------------------------
+------------------
 These item receivers are targeted to content type 0x01, so they run on every item and every event everywhere. They don't 
 do anything unless they find a configuration telling them they should. 
 
 Execute page
------------------------
+------------
 Empty generic SharePoint page able to run plugins. The plugin can either treat it as an ASP.NET page, build, display and handle
 controls, or it can be used as a simple backend.
 
 Form Iterator
------------------------
+-------------
 Our custom form iterator allows you to prefill values in forms with URL parameters (FieldInternalName=Value) and set some fields to
 non-editable even in edit forms. 
 
 Navertica.SharePoint.Extensions
 -------------------------------
-Extension methods for the Server Side Object Model that make a lot of clumsy API stuff simpler and allow hassle-free programming in dynamic scripting languages.
+Extension methods for the Server Side Object Model that make a lot of clumsy API stuff simpler and allow hassle-free programming in dynamic 
+scripting languages.
 More details on https://github.com/NAVERTICA/Navertica.SharePoint.Extensions
 
 IExecuteScript - scripting engine interface
@@ -119,6 +135,28 @@ A really simple interface for loading and running simple language independent pl
 it has to contain the string "plugin" in its filename. Once it is in SiteScripts, it should be possible to execute it by adding a
 configuration entry and referring to it by its Name.
 
+Example plugins
+---------------
+##### Set Rights
+C# receiver plugin for setting different individual item rights to different groups and users depending on contents of user fields in the item itself 
+or in items connected with lookups
+
+##### Duplicate
+C# receiver that simply takes values from one fields and copies them to another (usually text) field - useful for example when grouping items, some field 
+types cannot be used for grouping, so just duplicate them automatically into another field, hide it in forms and use it for grouping in list views.
+
+##### Linked Lookup
+C# receiver for maintaining bidirectional lookup relations - an item in list A has a lookup value pointing to an item in list B, Linked Lookup 
+automatically updates the item in list B to point back to the item in list A.
+
+##### SiteConfig/SiteScripts Updated
+IronPython plugins calling the NVRConfigService and NVRRepoService in order to reflect updates in SiteConfig and SiteScripts, so that the data
+is always current.
+
+##### Example.js
+Simple JavaScript plugin set up to run on every page, it only prints "Example.js running" to browser's developer console.
+
+------------------------------------------------------------------------------------------
 
 Required site structures 
 ==================
@@ -166,6 +204,7 @@ SiteScripts library
 This library will be installed on activation of NVRInfrastructure if it doesn't exist. The first time around, all rights will be removed
 so that only admins can add and edit scripts. 
 
+------------------------------------------------------------------------------------------
 		
 Installation 
 ===========
@@ -192,6 +231,7 @@ PowerShell scripts for the entire installation are upcoming.
 4. New instance for both service apps needs to be added, together with proxies (_admin/ServiceApplications.aspx)
 5. Both proxies need to be associated with the web application where we want to use them - Service Application Associations (_admin/ApplicationAssociations.aspx)
 
+------------------------------------------------------------------------------------------
 
 Building addons using SPTools 
 ========
